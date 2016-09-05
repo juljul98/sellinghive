@@ -43,7 +43,7 @@
                         <button class="bank-edit">Edit</button>
                         <div class="form-group mt10 ml50">
                             <div class="col-xs-12">
-                                <input type="text" class="form-control input01" name="oldpass" id="oldpass" tabindex="1" placeholder="Bank Name">
+                                <input type="text" class="form-control input01" name="bankname" id="bankname" tabindex="1" placeholder="Bank Name">
                             </div>
                         </div>
                     </div>
@@ -52,8 +52,8 @@
                         <button class="bank-delete">Delete</button>
                         <div class="form-group mt10 ml50">
                             <div class="col-xs-12">
-                                <input type="text" class="form-control input01" name="oldpass" id="oldpass" tabindex="1" placeholder="Routing Number"><br>
-                                <input type="text" class="form-control input01" name="oldpass" id="oldpass" tabindex="1" placeholder="Account Number">
+                                <input type="text" class="form-control input01" name="routingnumber" id="routingnumber" tabindex="1" placeholder="Routing Number"><br>
+                                <input type="text" class="form-control input01" name="accountnumber" id="accountnumber" tabindex="1" placeholder="Account Number">
                                 <span class="verified">Verified</span>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                         <button class="bank-edit">Edit</button>
                         <div class="form-group mt20 ml50">
                             <div class="col-xs-12">
-                                <input type="text" class="form-control input01" name="oldpass" id="oldpass" tabindex="1" placeholder="Paypal Username">
+                                <input type="text" class="form-control input01" name="paypalusername" id="paypalusername" tabindex="1" placeholder="Paypal Username">
                             </div>
                         </div>
                     </div>
@@ -72,15 +72,15 @@
                         <button class="bank-delete">Delete</button>
                         <div class="form-group mt10 ml50">
                             <div class="col-xs-12">
-                                <input type="password" class="form-control input01" name="oldpass" id="oldpass" tabindex="1" placeholder="Paypal Password">
+                                <input type="password" class="form-control input01" name="paypalpassword" id="paypalpassword" tabindex="1" placeholder="Paypal Password">
                                 <span class="verified">Verified</span>
                             </div>
                         </div>
                     </div>
                     <button class="bank-add">Add Bank</button>
+                    <p class="tCenter"><button class="bank-save" id="bank-save">Save</button></p>
                 </form>
 
-                <p class="tCenter"><button class="bank-save">Save</button></p>
             </div>
         </main>
                 <nav id="main-nav">
@@ -294,5 +294,6 @@
     </script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/session.js"></script>
+        <script type="text/javascript" src="js/bank.js"></script>
 </body>
 </html>

@@ -37,28 +37,29 @@
         </header>
         <main id="main-content" class="mt40">
             <div class="content">
+                <form action="" method="POST" id="tax_form"></form>
                 <table class="tax-table">
                     <tr>
                         <td>Corporate Name:</td>
-                        <td>&nbsp;Paul's Rocket Ship</td>
+                        <td>&nbsp;Paul's Rocket Ship </td>
                     </tr>
                     <tr>
                         <td>EIN #:</td>
-                        <td>&nbsp;26-226666</td>
+                        <td>&nbsp;26-226666 <input type="text" name="ein" id="ein" class="ein"></td>
                     </tr>
                     <tr>
                         <td>Address:</td>
-                        <td>&nbsp;716 Space Way Forestville, NY 14062</td>
+                        <td>&nbsp;716 Space Way Forestville, NY 14062 <input type="text" name="address" id="address" class="address"></td>
                     </tr>
                     <tr>
                         <td>Corporate Entity:</td>
-                        <td>&nbsp;Sole Proprietorship</td>
+                        <td>&nbsp;Sole Proprietorship<input type="text" name="entity" id="entity" class="entity"></td>
                     </tr>
                 </table>
 
                 <div class="btn-wrap mt30">
-                    <button class="btn-edit">Edit</button>
-                    <button class="btn-delete">Save</button>
+                    <button type="submit" id="btn-edit" class="btn-edit">Edit</button>
+                    <button type="submit" id="btn-save" class="btn-delete">Save</button>
                 </div>
             </div>
         </main>
@@ -273,5 +274,6 @@
     </script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/session.js"></script>
+         <script type="text/javascript" src="js/tax.js"></script>
 </body>
 </html>

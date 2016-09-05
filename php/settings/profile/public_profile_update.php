@@ -1,5 +1,5 @@
 <?php 
-  require 'connect.php';
+  require '../../connect.php';
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 header('content-type: application/json; charset=utf-8');
@@ -69,13 +69,13 @@ header('content-type: application/json; charset=utf-8');
         $message2['success'] = 'Save Picture';
       }
 
-    $sql = "SELECT * FROM tbl_publicprofile WHERE userid = '$userid' ";
+    $sql = "SELECT * FROM tbl_profile WHERE userid = '$userid' ";
     $result = mysqli_query($conn,$sql);
     $user_data = mysqli_fetch_array($result);
     $count_row = $result->num_rows;
     if($count_row == 0) {
         echo json_encode($userid);
-            $sql = $conn->prepare("INSERT INTO tbl_publicprofile(`companyname`, `url`, `userid`, `logo`, `photo`, `about`, `reviewcount`, `taxid`, `primarycontact`, `phonenumber`, `date`)VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            $sql = $conn->prepare("INSERT INTO tbl_profile(`companyname`, `url`, `userid`, `logo`, `photo`, `about`, `reviewcount`, `taxid`, `date`)VALUES(?,?,?,?,?,?,?,?,?,?,?)");
             $sql->bind_param('sssssssssss', $corporate_name, $url, $userid, $logo, $photo, $about, $reviewcount, $taxid, $primary_contact, $phone_number, $date);
             $sql->execute();
             $sql->close();
@@ -87,17 +87,14 @@ header('content-type: application/json; charset=utf-8');
              $message['success'] = 'Successfully Registered';
              $conn->close(); 
     } else if ($count_row == 1) {
-         $sql = "UPDATE tbl_publicprofile SET 
+         $sql = "UPDATE tbl_profile SET 
          `companyname` = '$corporate_name',
          `url` = '$url',
          `logo` = '$logo',
          `photo` = '$photo',
          `about` = '$about',
          `reviewcount` = '$reviewcount',
-         `taxid` = '$taxid',
-         `primarycontact` = '$primary_contact',
-         `phonenumber` = '$phone_number',
-         date = '$date'
+         `taxid` = '$taxid'
           WHERE userid='$userid'";
         mysqli_query($conn, $sql);
         mysqli_close($conn);
