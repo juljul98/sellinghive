@@ -1,0 +1,25 @@
+.msg {
+	ul.inbox {
+		border-top: 5px solid $brown;
+		li {
+			display: table;
+			width: 100%;
+			vertical-align: middle;
+			margin-bottom: 0;
+			border-bottom: 1px solid $brown;
+			text-align: center;
+			.select {
+				display: table-cell;
+				padding: 5px;
+			}
+			.date {
+				display: table-cell;
+				padding: 10px 0;
+			}
+			.title {
+				display: table-cell;
+				padding: 10px 5px;
+			}
+		}
+	}
+}

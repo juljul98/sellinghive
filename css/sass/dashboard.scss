@@ -1,0 +1,31 @@
+.board {
+	text-align: justify;
+	.board-title {
+		text-align: center;
+		a {
+			color: $gold-dark;
+			font-size: 1.3em;
+		}
+	}
+	.row {
+		display: table;
+		width: 100%;
+		 > 	div {
+			display: table-cell;
+			float: none;
+			padding: 5px;
+			&:first-child{
+				border-right: 1px solid  $gold-dark;
+			}
+		}
+		&:first-child > div{
+			border-bottom: 1px solid $gold-dark;
+		}
+	}
+	ul {
+		padding: 10px;
+		li {
+			margin-bottom: 10px;
+		}
+	}
+}

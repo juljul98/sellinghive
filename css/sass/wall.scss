@@ -1,0 +1,10 @@
+.wall {
+	ul {
+		li {
+			margin-bottom: 5px;
+			padding: 10px 20px;
+			@include background-opacity(#e2d5a9, 0.8);
+			color: $brown;
+		}
+	}
+}

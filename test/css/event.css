@@ -1,0 +1,51 @@
+/*Custom Event Style*/
+.contents .section .section-inner,
+.sarchArea .inner {
+	max-width: 960px;
+	width: 100%;
+}
+.calendar {
+	padding: 0;
+}
+.info_detail .title p {
+    background-image: url(/common/images/icon_calendar.gif);
+}
+.info_detail .topic {
+	margin: 20px 0 60px;
+}
+.topic .text-block {
+	float: none;
+	width: auto;
+}
+@media screen and (max-width: 640px) {
+	.forPc,
+	.info_detail .title02 .date {
+		display: none!important;
+	}
+	.info_detail {
+	    font-size: 80%;
+	}
+	.info_detail .title {
+	    border-bottom: #7fbce0 dashed 1px;
+	}
+	.info_detail .title02 {
+		margin-top: 10px;
+	    font-weight: bold;
+	}
+	.info_detail .btnArea a {
+		font-size: 125%;
+	    background-position: 15% center;
+	}
+	.info_detail .topic {
+		margin-top: 15px;
+	}
+	.info_detail .title02 .name {
+		padding-left: 28px;
+	}
+}
+@media screen and (max-width: 960px) {
+	.contents .section .section-inner {
+		max-width: 100%;
+		margin: 0;
+	}
+}

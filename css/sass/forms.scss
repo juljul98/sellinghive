@@ -1,0 +1,29 @@
+.form-control {
+  height: 40px;
+}
+.input-group {
+  width: 100%;
+  overflow: hidden;
+  @include border-radius(10px!important);
+}
+.input01 {
+    background-color: #dace9a;
+    border: none;
+    color: #7a7555;
+}
+input[type="text"],
+input[type="password"] {
+  @include border-radius(10px!important);
+  &::-webkit-input-placeholder {
+    color: #7a7555;
+  }
+  &::-moz-placeholder {
+    color: #7a7555;
+  }
+  &:-ms-input-placeholder {
+    color: #7a7555;
+  }
+  &:-moz-placeholder {
+    color: #7a7555;
+  }
+}

@@ -1,0 +1,143 @@
+.content {
+    padding: 20px 15px;
+}
+.taC {
+    text-align: center;
+}
+
+.default-btn {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: #b29832;
+    @include border-radius(10px);
+    @include font();
+    color: $white;
+    font-size: 1em;
+}
+
+.google-log{
+    display: table;
+    min-width: 280px;
+    background: #c24a35;
+    margin: 0 auto 15px;
+    .icon{
+        display: table-cell;
+        width: 40px;
+        vertical-align: middle;
+        background: #af3c2d;
+        color: $white;
+        font-size: 18px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .label{
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0;
+        color: $white;
+        font-size: 12px;
+        line-height: 40px;
+        text-align: center;
+    }
+}
+
+.fb-log{
+    display: table;
+    min-width: 280px;
+    background: #3c5a9a;
+    margin: 0 auto 15px;
+    .icon{
+        display: table-cell;
+        width: 40px;
+        vertical-align: middle;
+        background: #38528d;
+        color: $white;
+        font-size: 18px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .label{
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0;
+        color: $white;
+        font-size: 12px;
+        line-height: 40px;
+        text-align: center;
+    }
+}
+
+
+.forgot-label {
+    display: inline-block;
+    margin-top: 6px;
+    @include font();
+    color: #7a7555;
+    font-size: 0.7em;
+}
+
+.title01 {
+    margin: 0.5em 0 0.7em;
+    color: #6e632d;
+    font-size: 1.6em;
+    line-height: 1;
+    text-align: center;
+}
+.sigin-block p {
+    color: #6e632d;
+}
+
+.nav {
+    padding: 10px 0 20px;
+    text-align: center;
+     a{
+        position: relative;
+        display: inline-block;
+        margin: 0 5px;
+        padding: 5px;
+        background-color: $gold-dark;
+        @include border-radius(5px);
+        color: #FFF;
+        line-height: 1.2;
+    }
+    sup {
+        position: absolute;
+        top: -10px;
+        right: -5px;
+        display: block;
+        padding: 5px;
+        background: green;
+        @include border-radius(50%);
+        font-size: 10px;
+        line-height: 1;
+    }
+}
+
+ul {
+    li {
+        margin-bottom: 10px;
+        color: $brown;
+        a {
+            color: $brown;
+            text-decoration: none;
+        }
+    }
+}
+/* Margins */
+.mt05 { margin-top: 5px; }
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
+.mt20 { margin-top: 20px; }
+.mt25 { margin-top: 25px; }
+.mt30 { margin-top: 30px; }
+.mt35 { margin-top: 35px; }
+.mt40 { margin-top: 40px; }
+
+.mb05 { margin-bottom: 5px; }
+.mb10 { margin-bottom: 10px; }
+.mb15 { margin-bottom: 15px; }
+.mb20 { margin-bottom: 20px; }
+.mb25 { margin-bottom: 25px; }
+.mb30 { margin-bottom: 30px; }
+.mb35 { margin-bottom: 35px; }
+.mb40 { margin-bottom: 40px; }
