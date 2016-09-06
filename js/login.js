@@ -6,7 +6,7 @@ $(document).ready(function() {
 		    password = $('#password').val();
 		$.ajax({
 			type: "POST",
-			url: "http://sellinghive.korinteraktiv.com/php/login.php", //
+			url: "php/login.php", //
 			dataType: "json",
 			crossDomain: true,
 			data : {email: email, password: password},
@@ -18,7 +18,8 @@ $(document).ready(function() {
 					writeCookie('UserEmail', email+'/'+response.role+'/'+response.key, 3);
 					$('body').load('dashboard_sales.html');
 				} else if (response.status == 'Error') {
-					$('.status').text(response.status);
+					$('#main-nav').append("<div class='error'>Login error</div>");
+					$('.error').delay(3000).fadeOut(400);
 				}
 			}
 		});

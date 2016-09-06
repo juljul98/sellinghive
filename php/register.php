@@ -34,7 +34,7 @@ header('content-type: application/json; charset=utf-8');
             $sql = $conn->prepare("INSERT INTO tbl_users(`name`, `email`, `password`, `role`, `date`)VALUES(?,?,?,?,?)");
             $sql->bind_param('sssss', $name, $email, md5($password), $role, $date);
             $sql->execute();
-            $messages['success'] = 'Successfully Registered';
+            $messages['success'] = 1;
             $conn->close();
             $sql->close();  
       }

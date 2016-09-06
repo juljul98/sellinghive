@@ -56,9 +56,11 @@ $(document).ready(function() {
 			success: function(response) {
 				alert(response);
 				if(data.success == 1) {
-					$.simplyToast('success', 'Success! Message Sent');
+					$('#main-nav').append("<div class='error'>Success</div>");
+					$('.error').delay(3000).fadeOut(400);
 				}else {
-					$.simplyToast('danger', 'Error! Message Not sent');
+					$('#main-nav').append("<div class='error'>Error</div>");
+					$('.error').delay(3000).fadeOut(400);
 				}
 				// $("#message").html(data);
 				

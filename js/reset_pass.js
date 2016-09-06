@@ -21,7 +21,8 @@ $(document).ready(function(){
 		    		$('p.missmatch').text(response.missmatch);
 		    		$('p.missmatch').text(response.notfound);
 		    		$('p.fieldRequired').text(response.required);
-		    		$('p.success').text(response.success);
+		    		$('#main-nav').append("<div class='error'>"+ response.success + "</div>");
+					$('.error').delay(3000).fadeOut(400);
 		    	}
 		    });
 	});

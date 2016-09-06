@@ -75,8 +75,8 @@ header('content-type: application/json; charset=utf-8');
     $count_row = $result->num_rows;
     if($count_row == 0) {
         echo json_encode($userid);
-            $sql = $conn->prepare("INSERT INTO tbl_profile(`companyname`, `url`, `userid`, `logo`, `photo`, `about`, `reviewcount`, `taxid`, `date`)VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-            $sql->bind_param('sssssssssss', $corporate_name, $url, $userid, $logo, $photo, $about, $reviewcount, $taxid, $primary_contact, $phone_number, $date);
+            $sql = $conn->prepare("INSERT INTO tbl_profile(`companyname`, `url`, `userid`, `logo`, `photo`, `about`, `reviewcount`, `taxid`, `date`)VALUES(?,?,?,?,?,?,?,?,?)");
+            $sql->bind_param('sssssssss', $corporate_name, $url, $userid, $logo, $photo, $about, $reviewcount, $taxid, $date);
             $sql->execute();
             $sql->close();
             $sql2 = $conn->prepare("INSERT INTO tbl_tax(`companyname`, `userid`, `date`)VALUES(?,?,?)");
@@ -84,7 +84,7 @@ header('content-type: application/json; charset=utf-8');
             $sql2->execute();
             $sql2->close();
 
-             $message['success'] = 'Successfully Registered';
+             $message['success'] = 1;
              $conn->close(); 
     } else if ($count_row == 1) {
          $sql = "UPDATE tbl_profile SET 
@@ -98,7 +98,7 @@ header('content-type: application/json; charset=utf-8');
           WHERE userid='$userid'";
         mysqli_query($conn, $sql);
         mysqli_close($conn);
-        $message['success'] = 'Sucessfully Registered';
+        $message['success'] = 1;
     }
 echo json_encode($message); 
 echo json_encode($message1); 

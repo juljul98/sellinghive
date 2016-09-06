@@ -20,6 +20,7 @@ $(document).ready(function(){
 			$('#primary-contact').val(response.primarycontact);
 			$('#phone-number').val(response.phonenumber);
 			$('#aboutArea').val(response.about);
+
 			var rating = '';
 			for(x=1; x<=response.reviewcount; x++) {
 				rating += '<img src="images/rating.png" alt="">';
@@ -51,11 +52,11 @@ $(document).ready(function(){
         },
         success:function(response){
             //$(".progress").hide(); //hide progress bar on success of upload
-            $('p.picmsg').text(response.extension + response.size);
-             $('p.success').text(response.success);
+            
         },
         complete:function(response){
-             
+			$('#main-nav').append("<div class='error'>Successfully saved</div>");
+			$('.error').delay(3000).fadeOut(400);
         }
      });
 

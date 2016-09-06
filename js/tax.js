@@ -28,7 +28,8 @@ $(document).ready(function(){
 			dataType: 'json',
 			data: {userid: userid, ein: ein, address: address, entity: entity},
 			success: function(response) {
-				alert(response.success);
+				$('#main-nav').append("<div class='error'>"+ response.success + "</div>");
+				$('.error').delay(3000).fadeOut(400);
 			}
 		});
 	});
