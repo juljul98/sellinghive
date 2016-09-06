@@ -37,6 +37,7 @@
         </header>
         <main id="main-content" class="mt30">
             <div class="content">
+                <input type="hidden" name="toid" id="toid" class="toid" placeholder="company to review">
                 <h2 class="person-name">JULIE NETHERS</h2>
                 <p class="txt-label"><span>Reviews</span>
                     <span class="rating">
@@ -51,7 +52,7 @@
                     </span>
                     <span class="count">(8)</span>
                 </p>
-
+                <input type="number" id="reviewrating" name="reviewrating" class="reviewrating" placeholder="reviewrating">
                 <table class=" table-review">
                     <tr>
                         <td><i class="fa fa-weixin" aria-hidden="true"></i></td>
@@ -66,11 +67,12 @@
                         <td>Knows Manufacturing</td>
                     </tr>
                 </table>
+                <input type="text" id="reviewtext" name="reviewtext" class="reviewtext" placeholder="reviewtext">
             
 
                 <div class="btn-wrap mt30">
-                    <button class="btn-edit">Edit</button>
-                    <button class="btn-delete">Save</button>
+                    <p class="mt40 tCenter"><button class="review-edit" id="review-edit">Edit</button></p>
+                    <p class="mt40 tCenter"><button class="review-save" id="review-save">Save</button></p>
                 </div>
             </div>
         </main>
@@ -286,5 +288,6 @@
     </script>
                              <script type="text/javascript" src="js/navigation.js"></script>
      <script type="text/javascript" src="js/session.js"></script>
+     <script type="text/javascript" src="js/review.js"></script>
 </body>
 </html>

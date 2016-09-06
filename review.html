@@ -36,27 +36,20 @@
             <div class="branch"><img src="images/beehive.png" alt=""></div>
         </header>
         <main id="main-content" class="mt30">
+            <form action="" method="post" id="review_form"></form>
             <div class="content">
+                <input type="hidden" name="toid" id="toid" class="toid" placeholder="company to review">
                 <h2 class="review-title">XYZ Manufacturing</h2>
-
                 <p class="review-rating mt20">
                     <span class="rating">
                         <img src="images/rating.png" alt="">
-                        <img src="images/rating.png" alt="">
-                        <img src="images/rating.png" alt="">
-                        <img src="images/rating.png" alt="">
-                        <img src="images/rating.png" alt="">
-                        <img src="images/rating.png" alt="">
-                        <img src="images/rating.png" alt="">
-                        <img src="images/rating.png" alt="">
                     </span>
-                    <span class="count">(8)</span>
+                    <span class="count">(1)</span>
                 </p>
-
+                <input type="number" id="reviewrating" name="reviewrating" class="reviewrating" placeholder="reviewrating">
                 <p class="mt30 tCenter">Good company to work for. Greate VP of Sales, responsive, intellegent.</p>
-                <p class="mt15 tCenter">They pay fast after deal closes. Will do business again.</p>
-
-                <p class="mt40 tCenter"><button class="review-edit">Edit</button></p>
+                <input type="text" id="reviewtext" name="reviewtext" class="reviewtext" placeholder="reviewtext">
+                <p class="mt40 tCenter"><button class="review-save" id="review-save">Edit</button></p>
             </div>
         </main>
                 <nav id="main-nav">
@@ -270,5 +263,6 @@
     </script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/session.js"></script>
+         <script type="text/javascript" src="js/review.js"></script>
 </body>
 </html>

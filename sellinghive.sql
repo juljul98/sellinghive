@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2016 at 11:21 AM
+-- Generation Time: Sep 06, 2016 at 11:33 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -42,7 +42,8 @@ CREATE TABLE `tbl_bank` (
 --
 
 INSERT INTO `tbl_bank` (`id`, `userid`, `bankname`, `routingnumber`, `accountnumber`, `paypalusername`, `paypalpassword`, `date`) VALUES
-(1, 22, 'asdsad', 'sdfzxcvxv', 'xcvxcvxcv', 'xcvcxvxcv', 'xcvxvxcvcv', '2016-11-12');
+(1, 22, 'asdsad', 'sdfzxcvxv', 'xcvxcvxcv', 'xcvcxvxcv', 'xcvxvxcvcv', '2016-11-12'),
+(2, 59, 'xvxcvx', 'vxcvcxv', 'xcvxccxv', 'julius', 'fRiENdNakitas', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -98,10 +99,18 @@ CREATE TABLE `tbl_review` (
   `id` int(255) NOT NULL,
   `fromid` int(255) NOT NULL,
   `toid` int(255) NOT NULL,
-  `reviewrating` varchar(255) NOT NULL,
+  `reviewrating` int(255) NOT NULL,
   `reviewtext` varchar(255) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_review`
+--
+
+INSERT INTO `tbl_review` (`id`, `fromid`, `toid`, `reviewrating`, `reviewtext`, `date`) VALUES
+(1, 59, 0, 12, 'asdsadasdads', '0000-00-00'),
+(2, 59, 0, 67, 'asdasdsadasd', '2016-11-17');
 
 -- --------------------------------------------------------
 
@@ -207,6 +216,12 @@ ALTER TABLE `tbl_profile`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_review`
+--
+ALTER TABLE `tbl_review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_tax`
 --
 ALTER TABLE `tbl_tax`
@@ -226,7 +241,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_bank`
 --
 ALTER TABLE `tbl_bank`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_message`
 --
@@ -237,6 +252,11 @@ ALTER TABLE `tbl_message`
 --
 ALTER TABLE `tbl_profile`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `tbl_review`
+--
+ALTER TABLE `tbl_review`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_tax`
 --
