@@ -73,11 +73,11 @@ require '../../header.php';
     $count_row = $result->num_rows;
     if($count_row == 0) {
         echo json_encode($userid);
-            $sql = $conn->prepare("INSERT INTO tbl_profile(`companyname`, `url`, `userid`, `logo`, `photo`, `about`, `reviewcount`, `taxid`, `date`)VALUES(?,?,?,?,?,?,?,?,?)");
+            $sql = $conn->prepare("INSERT INTO tbl_profile(`companyname`, `url`, `userid`, `logo`, `photo`, `about`, `reviewcount`, `taxid`, `created_at`)VALUES(?,?,?,?,?,?,?,?,?)");
             $sql->bind_param('sssssssss', $corporate_name, $url, $userid, $logo, $photo, $about, $reviewcount, $taxid, $date);
             $sql->execute();
             $sql->close();
-            $sql2 = $conn->prepare("INSERT INTO tbl_tax(`companyname`, `userid`, `date`)VALUES(?,?,?)");
+            $sql2 = $conn->prepare("INSERT INTO tbl_tax(`companyname`, `userid`, `created_at`)VALUES(?,?,?)");
             $sql2->bind_param('sss', $corporate_name, $userid, $date);
             $sql2->execute();
             $sql2->close();

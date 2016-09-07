@@ -29,7 +29,7 @@ require 'header.php';
       }
       if (empty($messages) == true) {
             $date = date('Y-m-d h:i:s');
-            $sql = $conn->prepare("INSERT INTO tbl_users(`name`, `email`, `password`, `role`, `date`)VALUES(?,?,?,?,?)");
+            $sql = $conn->prepare("INSERT INTO tbl_users(`name`, `email`, `password`, `role`, `created_at`)VALUES(?,?,?,?,?)");
             $sql->bind_param('sssss', $name, $email, md5($password), $role, $date);
             $sql->execute();
             $messages['success'] = 1;

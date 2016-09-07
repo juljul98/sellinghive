@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2016 at 11:33 AM
+-- Generation Time: Sep 07, 2016 at 12:57 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -34,16 +34,8 @@ CREATE TABLE `tbl_bank` (
   `accountnumber` varchar(255) NOT NULL,
   `paypalusername` varchar(255) NOT NULL,
   `paypalpassword` varchar(255) NOT NULL,
-  `date` date NOT NULL
+  `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_bank`
---
-
-INSERT INTO `tbl_bank` (`id`, `userid`, `bankname`, `routingnumber`, `accountnumber`, `paypalusername`, `paypalpassword`, `date`) VALUES
-(1, 22, 'asdsad', 'sdfzxcvxv', 'xcvxcvxcv', 'xcvcxvxcv', 'xcvxvxcvcv', '2016-11-12'),
-(2, 59, 'xvxcvx', 'vxcvcxv', 'xcvxccxv', 'julius', 'fRiENdNakitas', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -78,16 +70,15 @@ CREATE TABLE `tbl_profile` (
   `about` varchar(255) NOT NULL,
   `reviewcount` int(255) NOT NULL,
   `taxid` varchar(255) NOT NULL,
-  `date` date NOT NULL
+  `created_at` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_profile`
 --
 
-INSERT INTO `tbl_profile` (`id`, `companyname`, `url`, `userid`, `logo`, `photo`, `about`, `reviewcount`, `taxid`, `date`) VALUES
-(3, 'bondaysy', 'saasss', '23', '/home3/jaynardv/public_html/sellinghive/php/uploads/hc85q6isk518o1z0bsgr.jpg', 'photo.png', 'wasak', 1, '1', '2016-09-04'),
-(2, 'Tcap', 'sadlfy', '59', 'logo.png', 'photo.png', 'Magaling ako so strong', 1, '1', '2016-09-03');
+INSERT INTO `tbl_profile` (`id`, `companyname`, `url`, `userid`, `logo`, `photo`, `about`, `reviewcount`, `taxid`, `created_at`) VALUES
+(1, 'asasasasadasdsad', '', '4', '', '', '                        \r\n                    ', 1, '1', '2016-09-07 12:36:53');
 
 -- --------------------------------------------------------
 
@@ -101,16 +92,17 @@ CREATE TABLE `tbl_review` (
   `toid` int(255) NOT NULL,
   `reviewrating` int(255) NOT NULL,
   `reviewtext` varchar(255) NOT NULL,
-  `date` date NOT NULL
+  `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_review`
 --
 
-INSERT INTO `tbl_review` (`id`, `fromid`, `toid`, `reviewrating`, `reviewtext`, `date`) VALUES
-(1, 59, 0, 12, 'asdsadasdads', '0000-00-00'),
-(2, 59, 0, 67, 'asdasdsadasd', '2016-11-17');
+INSERT INTO `tbl_review` (`id`, `fromid`, `toid`, `reviewrating`, `reviewtext`, `created_at`) VALUES
+(1, 3, 2, 3, 'pangit ka ', '2016-09-07 09:19:53'),
+(2, 4, 2, 23, 'asasasasasas', '2016-09-07 09:55:43'),
+(3, 4, 2, 1, 'pangit mag trabaho dyan', '2016-09-07 12:14:20');
 
 -- --------------------------------------------------------
 
@@ -124,15 +116,15 @@ CREATE TABLE `tbl_tax` (
   `ein` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `entity` varchar(255) NOT NULL,
-  `date` date NOT NULL
+  `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_tax`
 --
 
-INSERT INTO `tbl_tax` (`id`, `userid`, `ein`, `address`, `entity`, `date`) VALUES
-(3, 22, 'cbcvbcvbcbcvbvcbvcbvc', 'asabvbcvbcvb', 'walasak', '2016-10-12');
+INSERT INTO `tbl_tax` (`id`, `userid`, `ein`, `address`, `entity`, `created_at`) VALUES
+(1, 4, 'helloworldsysssss', 'adad', 'asdadsad', '2016-09-07 12:41:20');
 
 -- --------------------------------------------------------
 
@@ -146,52 +138,19 @@ CREATE TABLE `tbl_users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL,
-  `date` date NOT NULL
+  `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`id`, `name`, `email`, `password`, `role`, `date`) VALUES
-(22, 'julius', 'mateojulius98@yahoo.com', '1e917f4db253501f5b5a801705821807', 'sales', '2016-09-02'),
-(23, 'aw', 'aw@gmail.com', 'b787d22d9cb06342658bf546039117bc', 'corporate', '2016-09-02'),
-(24, 'jaymart', 'jaymart@gmail.com', '0c78a58bfe43d7f68c01d09a977ebdb6', 'corporate', '2016-09-02'),
-(25, 'doms', 'doms@gmail.com', '3f93c817c7ddf42f3f3efd69833f88b5', 'corporate', '2016-09-03'),
-(26, 'doms', 'doms1@gmail.com', '895b3c93278a2c087266dfae0e003b3a', 'corporate', '2016-09-03'),
-(27, 'walasak', 'walasak@gmail.com', 'ac79e380d7aae2bd86ad87576d0ca52b', 'corporate', '2016-09-03'),
-(28, 'sample', 'sample@gmail.com', 'cf48af5098f69c62dee1040d6907b4a6', 'corporate', '2016-09-03'),
-(29, 'admin', 'admin@gmail.com', '5bb5aff891d4f5d841b26a6cb8122156', 'corporate', '2016-09-03'),
-(30, 'partanduls@gmail.com', 'partanduls@gmail.com', '97a996600e204d6f8907470d3d2f7296', 'corporate', '2016-09-03'),
-(31, 'ewe', 'ewewe', '', '', '0000-00-00'),
-(32, 'ewe', 'ewewe', '', '', '0000-00-00'),
-(33, 'ewe', 'ewewe', '', '', '0000-00-00'),
-(34, 'ewe', 'ewewe', '', '', '0000-00-00'),
-(35, 'ewe', 'ewewe', '', '', '0000-00-00'),
-(36, 'ewe', 'ewewe', '', '', '0000-00-00'),
-(37, 'ewe', 'ewewe', '', '', '0000-00-00'),
-(38, 'awe', 'ewew', '', '', '0000-00-00'),
-(39, 'awe', 'ewew', '', '', '0000-00-00'),
-(40, 'awe', 'ewew', '', '', '0000-00-00'),
-(41, 'wewe', 'ewew', '', '', '0000-00-00'),
-(42, 'ewee', 'ewewe', '', '', '0000-00-00'),
-(43, 'ewee', 'ewewe', '', '', '0000-00-00'),
-(44, 'ewee', 'ewewe', '', '', '0000-00-00'),
-(45, 'ewee', 'ewewe', '', '', '0000-00-00'),
-(46, 'ewe', '', '', '', '0000-00-00'),
-(47, 'ewe', '', '', '', '0000-00-00'),
-(48, 'ewe', '', '', '', '0000-00-00'),
-(49, 'ewe', '', '', '', '0000-00-00'),
-(50, 'ewe', '', '', '', '0000-00-00'),
-(51, 'ewe', '', '', '', '0000-00-00'),
-(52, 'ewe', '', '', '', '0000-00-00'),
-(53, 'ewe', '', '', '', '0000-00-00'),
-(54, 'ewe', '', '', '', '0000-00-00'),
-(55, 'ewe', '', '', '', '0000-00-00'),
-(56, 'eweewe1111', 'ewewewew111', '', '', '0000-00-00'),
-(57, 'juljul98', 'wala@gmail.com', 'b3026ae534dd895040777db7dee344dd', 'corporate', '2016-09-03'),
-(58, 'cisco', 'cisco@gmail.com', '0062d21c1a97acad0fff653df56849b2', 'corporate', '2016-09-03'),
-(59, 'jj@gmail.com', 'jj@gmail.com', '1e917f4db253501f5b5a801705821807', 'corporate', '2016-09-03');
+INSERT INTO `tbl_users` (`id`, `name`, `email`, `password`, `role`, `created_at`) VALUES
+(1, 'asa', 'corporate@gmail.com', 'b3c674ad3ac2a90b60c0fa89dcd0dd5e', 'corporate', '2016-09-07 07:12:03'),
+(2, 'sales', 'sales@gmail.com', 'b3c674ad3ac2a90b60c0fa89dcd0dd5e', 'sales', '2016-09-07 07:25:49'),
+(3, 'simsimi', 'simsimi@gmail.com', 'b3c674ad3ac2a90b60c0fa89dcd0dd5e', 'corporate', '2016-09-07 09:19:16'),
+(4, 'walasak', 'walasak@gmail.com', 'b3c674ad3ac2a90b60c0fa89dcd0dd5e', 'corporate', '2016-09-07 09:55:09'),
+(5, 'asdasdadsad', 'sdsadads@gmail.com', '0ff31191582e14a372f2a8a8bfaebae1', 'corporate', '2016-09-07 12:23:49');
 
 --
 -- Indexes for dumped tables
@@ -241,7 +200,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_bank`
 --
 ALTER TABLE `tbl_bank`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_message`
 --
@@ -251,22 +210,22 @@ ALTER TABLE `tbl_message`
 -- AUTO_INCREMENT for table `tbl_profile`
 --
 ALTER TABLE `tbl_profile`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_review`
 --
 ALTER TABLE `tbl_review`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_tax`
 --
 ALTER TABLE `tbl_tax`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

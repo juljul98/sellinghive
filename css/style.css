@@ -1715,3 +1715,104 @@ ul li {
 
 
 /*# sourceMappingURL=style.css.map */
+
+/* For customized tooltip */
+#tooltip {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 105px;
+    z-index: 100;
+    padding: 11px 12px;
+    border-radius: 8px;
+    background: #cab15a;
+    border: 1px solid #b19948;
+    font-size: 12px;
+}
+ 
+#tooltip:after {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #b19948;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+}
+
+#tooltip.top:after {
+    border-top-color: transparent;
+    border-bottom: 10px solid #111;
+    top: -20px;
+    bottom: auto;
+}
+
+#tooltip.left:after {
+    left: 10px;
+    margin: 0;
+}
+
+#tooltip.right:after {
+    right: 10px;
+    left: auto;
+    margin: 0;
+}
+
+.fileNotes i {
+	line-height: 1.7;
+}
+
+.modal-content {
+	border-radius: 0;
+    width: 90%;
+    margin: 50% auto;
+}
+
+.modal-header {
+    border-bottom: 3px solid #af9432;
+}
+
+.modal-title {
+	font-size: 20px;
+}
+
+.modal-body {
+	min-height: 100px;
+}
+
+.okBtn {
+	display: block;
+	text-align: center;
+}
+
+
+.modal-content h4,
+.modal-content p, 
+.modal-content a {
+	color: #3f2302;
+}
+
+.modal-content a {
+	font-weight: bold;
+}
+
+.create-message .file-upload {
+    margin-right: 0;
+}
+
+.create-message .file-upload {
+	margin-bottom: 10px;
+}
+
+.fileName {
+	padding-left: 10px;
+}
+
+
+
+
+/*# sourceMappingURL=style.css.map */
+

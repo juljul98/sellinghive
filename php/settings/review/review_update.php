@@ -6,7 +6,7 @@ require '../../header.php';
 	$reviewrating = $_POST['reviewrating']; 
 	$reviewtext = $_POST['reviewtext']; 
 	$date = date('Y-m-d h:i:s');
-	$sql = $conn->prepare("INSERT INTO tbl_review(`fromid`,`toid`,`reviewrating`,`reviewtext`,`date`)VALUES(?,?,?,?,?)");
+	$sql = $conn->prepare("INSERT INTO tbl_review(`fromid`,`toid`,`reviewrating`,`reviewtext`,`created_at`)VALUES(?,?,?,?,?)");
 	$sql->bind_param('sssss', $userid, $toid, $reviewrating, $reviewtext, $date);
 	$sql->execute();
 	echo json_encode(

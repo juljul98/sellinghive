@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var userid = id;
 	$.ajax({
 		type: 'post',
-		url: 'http://sellinghive.korinteraktiv.com/php/settings/bank/bank_get.php',
+		url: 'php/settings/bank/bank_get.php',
 		dataType: 'json',
 		crossDomain: true,
 		data: {userid: userid},
@@ -26,7 +26,7 @@ $(document).ready(function(){
 			paypalpassword = $('#paypalpassword').val();
 		$.ajax({
 			type: 'post',
-			url: 'http://sellinghive.korinteraktiv.com/php/settings/bank/bank_save.php',
+			url: 'php/settings/bank/bank_save.php',
 			dataType: 'json',
 			crossDomain: true,
 			data: {

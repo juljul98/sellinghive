@@ -14,7 +14,7 @@
     $count_row = $result->num_rows;
 
     if($count_row == 0) {
-		$sql = $conn->prepare("INSERT INTO tbl_bank(`userid`, `bankname`, `routingnumber`, `accountnumber`, `paypalusername`, `paypalpassword`, `date`)VALUES(?,?,?,?,?,?,?)");
+		$sql = $conn->prepare("INSERT INTO tbl_bank(`userid`, `bankname`, `routingnumber`, `accountnumber`, `paypalusername`, `paypalpassword`, `created_at`)VALUES(?,?,?,?,?,?,?)");
 		$sql->bind_param('sssssss', $userid, $bankname, $routingnumber, $accountnumber, $paypalusername, $paypalpassword, $date);
 		$sql->execute();
 		echo json_encode(array('success' => 'Successfully Saved'));

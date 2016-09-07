@@ -4,7 +4,7 @@ $(document).ready(function() {
 		var userid = id;
 		$.ajax({
 			type: 'GET',
-			url: 'http://sellinghive.korinteraktiv.com/php/message/view_message.php', 
+			url: 'php/message/view_message.php', 
 			// url: 'php/view_message.php',
 			dataType: "jsonp",
 			crossDomain:true, 
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'http://sellinghive.korinteraktiv.com/php/message/delete_message.php', 
+			url: 'php/message/delete_message.php', 
 			// url: 'php/delete_message.php',
 			dataType: "json",
 			crossDomain:true, 

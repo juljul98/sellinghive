@@ -27,7 +27,7 @@ require '../../header.php';
         $sql = "UPDATE tbl_users SET password = '$newpass_secure' WHERE email='$email'";
         mysqli_query($conn, $sql);
         mysqli_close($conn);
-        $error['success'] = 'Sucessfully change';
+        $error['success'] = 1;
     }
     echo json_encode($error);
   

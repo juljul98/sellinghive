@@ -13,7 +13,7 @@
     $count_row = $result->num_rows;
 
     if($count_row == 0) {
-		$sql = $conn->prepare("INSERT INTO tbl_tax(`userid`,`ein`,`address`,`entity`,`date`)VALUES(?,?,?,?,?)");
+		$sql = $conn->prepare("INSERT INTO tbl_tax(`userid`,`ein`,`address`,`entity`,`created_at`)VALUES(?,?,?,?,?)");
 		$sql->bind_param('sssss', $userid, $ein, $address, $entity, $date);
 		$sql->execute();
 		echo json_encode(array(

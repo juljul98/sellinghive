@@ -6,11 +6,13 @@ $(document).ready(function() {
 		    password = $('#password').val();
 		$.ajax({
 			type: "POST",
-			url: "http://sellinghive.korinteraktiv.com/php/login.php", //
+			url: "php/login.php", //
 			dataType: "json",
 			crossDomain: true,
 			data : {email: email, password: password},
+			beforeSend: function(){ $(".overlay").show(); },
 			success : function(response){
+				$(".overlay").hide();
 				if (response.role == 'Corporate' && response.status == 'Success') {
 					writeCookie('UserEmail', email+'/'+response.role+'/'+response.key, 3);
 					$('body').load('dashboard_corporate.html');
@@ -18,8 +20,8 @@ $(document).ready(function() {
 					writeCookie('UserEmail', email+'/'+response.role+'/'+response.key, 3);
 					$('body').load('dashboard_sales.html');
 				} else if (response.status == 'Error') {
-					$('#main-nav').append("<div class='error'>Login error</div>");
-					$('.error').delay(3000).fadeOut(400);
+					$("#myModal").modal('show');
+					$(".modelText").text('Invalid Username or Password');
 				}
 			}
 		});

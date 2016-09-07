@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('#id').val(id);
 	$.ajax({
 		type: 'post',
-		url: 'http://sellinghive.korinteraktiv.com/php/settings/profile/public_profile_get.php',
+		url: 'php/settings/profile/public_profile_get.php',
 		dataType: 'json',
 		crossDomain: true,
 		data: {
@@ -43,20 +43,17 @@ $(document).ready(function(){
 
 	$('#public_profile').ajaxForm({
         beforeSend:function(){
-             //$(".progress").show();
-
+             $(".overlay").show();
         },
         uploadProgress:function(event,position,total,percentComplete){
-            //$(".progress-bar").width(percentComplete+'%'); //dynamicaly change the progress bar width
-            //$(".sr-only").html(percentComplete+'%'); // show the percentage number
+
         },
         success:function(response){
-            //$(".progress").hide(); //hide progress bar on success of upload
-            
         },
         complete:function(response){
-			$('#main-nav').append("<div class='error'>Successfully saved</div>");
-			$('.error').delay(3000).fadeOut(400);
+			$(".overlay").hide();
+            $("#myModal").modal('show');
+			$(".modelText").html('Successfully Saved!');
         }
      });
 
