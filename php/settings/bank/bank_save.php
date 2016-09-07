@@ -1,12 +1,13 @@
 <?php
 	require '../../connect.php';
+	require '../../header.php';
 	$userid = $_POST['userid'];
 	$bankname = $_POST['bankname'];
 	$routingnumber = $_POST['routingnumber'];
 	$accountnumber = $_POST['accountnumber'];
 	$paypalusername = $_POST['paypalusername'];
 	$paypalpassword = $_POST['paypalpassword'];
-	$date = date('Y:h:s');
+	$date = date('Y-m-d h:i:s');
 
 	$sql = "SELECT * FROM tbl_bank WHERE userid = '$userid' ";
     $result = mysqli_query($conn,$sql);

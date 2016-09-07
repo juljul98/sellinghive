@@ -1,9 +1,7 @@
 <?php
 
     require '../../connect.php';
-    header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Methods: GET, POST');
-    header('content-type: application/json; charset=utf-8');
+require '../../header.php';
     $email = $_POST['email'];
     $oldpass = md5($_POST['oldpass']);
     $confirm_oldpass = md5($_POST['confirm_oldpass']);

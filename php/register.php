@@ -1,8 +1,6 @@
 <?php
       require 'connect.php';
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
-header('content-type: application/json; charset=utf-8');
+require 'header.php';
       $name = $_POST['name'];
       $email = $_POST['email'];
       $password = $_POST['password'];
@@ -30,7 +28,7 @@ header('content-type: application/json; charset=utf-8');
             $messages['password'] = 'Must be greater than 8';
       }
       if (empty($messages) == true) {
-            $date = date("Y-m-d");
+            $date = date('Y-m-d h:i:s');
             $sql = $conn->prepare("INSERT INTO tbl_users(`name`, `email`, `password`, `role`, `date`)VALUES(?,?,?,?,?)");
             $sql->bind_param('sssss', $name, $email, md5($password), $role, $date);
             $sql->execute();

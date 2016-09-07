@@ -1,10 +1,11 @@
 <?php
 	require '../../connect.php';
+    require '../../header.php';
     $userid = $_POST['userid'];
     $ein = $_POST['ein'];
     $address = $_POST['address'];
     $entity = $_POST['entity'];
-    $date = date("Y:h:s");
+    $date = date('Y-m-d h:i:s');
 
     $sql = "SELECT * FROM tbl_tax WHERE userid = '$userid' ";
     $result = mysqli_query($conn,$sql);

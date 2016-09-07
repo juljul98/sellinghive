@@ -54,7 +54,6 @@ $(document).ready(function() {
 			cache: false,             		// To unable request pages to be cached
 			processData:false,        		// To send DOMDocument or non processed data file it is set to false
 			success: function(response) {
-				alert(response);
 				if(data.success == 1) {
 					$('#main-nav').append("<div class='error'>Success</div>");
 					$('.error').delay(3000).fadeOut(400);
@@ -63,7 +62,6 @@ $(document).ready(function() {
 					$('.error').delay(3000).fadeOut(400);
 				}
 				// $("#message").html(data);
-				
 			}
 		});
 

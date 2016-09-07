@@ -1,15 +1,13 @@
 <?php 
   require '../../connect.php';
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
-header('content-type: application/json; charset=utf-8');
+require '../../header.php';
   $userid = $_POST['id'];
   $corporate_name = $_POST['corporate-name'];
     $url = $_POST['url'];
     $primary_contact = $_POST['primary-contact'];
     $phone_number = $_POST['phone-number'];
     $about = $_POST['about'];
-    $date = date("Y-m-d");
+    $date = date('Y-m-d h:i:s');
     global $logo;
     global $photo;
     $reviewcount = 1;

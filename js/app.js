@@ -3,7 +3,6 @@ $(document).ready(function () {
   // $(document).on("click", "a", function (e) {
   //     var target = $(this),
   //         url = target.attr('href');
-  //   // console.log(url);
   //    e.preventDefault();
   //    $.ajax({
   //         type: "GET",

@@ -1,8 +1,6 @@
 <?php
 	require '../../connect.php';
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
-header('content-type: application/json; charset=utf-8');
+require '../../header.php';
 	$userid = $_POST['id'];
 	$sql = "SELECT * FROM tbl_profile WHERE userid = '$userid' ";
 	$result = mysqli_query($conn,$sql);

@@ -7,7 +7,7 @@ $(document).ready(function(){
 		    password = $('#password').val();
 		$.ajax({
 			type: 'POST',
-			url: 'php/register.php', //
+			url: 'http://sellinghive.korinteraktiv.com/php/register.php', //
 			dataType: "json",
 			crossDomain:true, 
 			data : {name: name, email: email, password: password},
@@ -19,6 +19,7 @@ $(document).ready(function(){
 				if(response.success == 1) {
 					$('#main-nav').append("<div class='error'>Successfully saved</div>");
 					$('.error').delay(3000).fadeOut(400);
+					$('body').load('login.html');
 				} else {
 					$('#main-nav').append("<div class='error'>Error occured</div>");
 					$('.error').delay(3000).fadeOut(400);

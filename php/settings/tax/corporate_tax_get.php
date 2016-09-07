@@ -1,5 +1,6 @@
 <?php
 	require '../../connect.php';
+require '../../header.php';
 	$userid = $_POST['userid'];
 	$sql = "SELECT * FROM tbl_tax WHERE `userid` = '$userid'";
 	$result = mysqli_query($conn, $sql);

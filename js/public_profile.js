@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('#id').val(id);
 	$.ajax({
 		type: 'post',
-		url: 'php/settings/profile/public_profile_get.php',
+		url: 'http://sellinghive.korinteraktiv.com/php/settings/profile/public_profile_get.php',
 		dataType: 'json',
 		crossDomain: true,
 		data: {

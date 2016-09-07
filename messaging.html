@@ -38,18 +38,21 @@
             <div class="content">
                 <div class="msg">
                     <div class="nav">
-                        <a href="create_message.html" class="navigation">New</a>
+                        <a class="navigation" href="create_message.html">New</a>
                         <a href="#">Archive</a>
                     </div>
-                    <ul class="row inbox">
-                        <li><div class="select"><input type="checkbox"></div><p class="date">08/12/2016</p><p class="title"> - Lorem ipsum dolor sit amet,</p></li>
-                        <li><div class="select"><input type="checkbox"></div><p class="date">08/12/2016</p><p class="title"> - Lorem ipsum dolor sit amet,</p></li>
-                        <li><div class="select"><input type="checkbox"></div><p class="date">08/12/2016</p><p class="title"> - Lorem ipsum dolor sit amet,</p></li>
-                    </ul>
+
+                    <table class="table-messages">
+                        <tbody id="inboxMessage">
+                            
+                        </tbody>
+                    </table>
+
+                     <button class="btnDeleteMsg">Delete</button>
                 </div>
             </div>
         </main>
-        <nav id="main-nav">
+                <nav id="main-nav">
             <a href="users.html" class="navigation users-btn btn"><img src="images/home_icn.png" alt=""></a>
             <a href="award.html" class="navigation award-btn btn"><img src="images/award_icn.png" alt=""></a>
             <a href="messaging.html" class="navigation messaging-btn btn"><img src="images/mail_icn.png" alt=""></a>
@@ -258,7 +261,8 @@
     <script type="text/javascript">
         app.initialize();
     </script>
-    <script type="text/javascript" src="js/navigation.js"></script>
-        <script type="text/javascript" src="js/session.js"></script>
+        <script type="text/javascript" src="js/navigation.js"></script>
+    <script type="text/javascript" src="js/session.js"></script>
+    <script src="js/view_message.js"></script>
 </body>
 </html>
