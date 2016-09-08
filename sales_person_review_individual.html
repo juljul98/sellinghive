@@ -39,29 +39,51 @@
             <div class="content">
                 <input type="hidden" name="toid" id="toid" class="toid" placeholder="company to review">
                 <h2 class="person-name"></h2>
-                <p class="txt-label"><span>Reviews</span>
-                    <ol class="rating">
+                <p class="txt-label">
+                    <span>Reviews</span>
+                    <span class="rating">
     
-                    </ol>
+                    </span>
                     <span class="count"></span>
                 </p>
-                Note: 1-10 Stars
-                <input type="number" id="reviewrating" name="reviewrating" class="reviewrating" placeholder="reviewrating" max="10" min="0">
+                
+               
                 <table class=" table-review">
                     <tr>
                         <td><i class="fa fa-weixin" aria-hidden="true"></i></td>
                         <td class="reviewDisplay"></td>
                     </tr>
                 </table>
-                <input type="text" id="reviewtext" name="reviewtext" class="reviewtext" placeholder="reviewtext">
-            
-
                 <div class="btn-wrap mt30">
                     <p class="mt40 tCenter"><button class="review-edit" id="review-edit">Edit</button></p>
-                    <p class="mt40 tCenter"><button class="review-save" id="review-save">Save</button></p>
+                    
                 </div>
             </div>
         </main>
+        <div id="myModal" class="modal fade" role="dialog"  >
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title modalTitle"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Edit</h4>
+                  </div>
+                  <div class="modal-body">
+                    <label for="reviewrating">Review Stars Note: 1-10 Stars</label><br>
+                     <input type="number" id="reviewrating" name="reviewrating" class="reviewrating" placeholder="reviewrating" max="10" min="0"><br>
+                     <label for="reviewtext">What can you say ?</label><br>
+                     <input type="text" id="reviewtext" name="reviewtext" class="reviewtext" placeholder="reviewtext"><br>
+                    <p class="modelText"></p>
+                  </div>
+
+                    <div class="modal-footer">
+                         <a href="#" class="okBtn btnclose" data-dismiss="modal">Ok</a>
+                         <a href="#" class="okBtn review-save" id="review-save">Save</a>
+                    </div>
+                </div>
+
+              </div>
+            </div>
         <nav id="main-nav">
             <a href="users.html" class="navigation users-btn btn"><img src="images/home_icn.png" alt=""></a>
             <a href="award.html" class="navigation award-btn btn"><img src="images/award_icn.png" alt=""></a>
@@ -73,6 +95,7 @@
     
 
     <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript">

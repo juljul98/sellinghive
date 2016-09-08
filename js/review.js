@@ -14,15 +14,28 @@ $(document).ready(function(){
 		url: 'php/settings/review/review_get.php',
 		dataType: 'json',
 		crossDomain: true,
-		data: {toid :toid},
-		success: function(response){
-	
+		data: {toid :toid, userid:userid},
+		success: function(data){
 			var html = '';
-			html += '<a href="#" data-key="'+ response.sales.id +'">';
-			html += '<li><p class="person"><span class="name">' + response.sales.email + '</span>';
-            html += '</p>';
-            html += '</li>';
-            html += '</a>';
+			var ratings = '';
+	
+			var count = data.sales.length;
+			var data = data.sales;
+			console.log(data);
+			for(x=0; x<count; x++) {
+				
+				// for(var y=1; y<=data[x].reviewrating; y++) {
+				// 	ratings += '<img src="images/rating.png" alt="">';
+				// }
+				html += '<a href="#" data-key="'+ data[x].id +'">';
+				html += '<li><p class="person"><span class="name">' + data[x].email + '</span>';
+				html += '<span>';
+				html += ratings;
+				html += '</span>';
+	            html += '</p>';
+	            html += '</li>';
+	            html += '</a>';
+            }
             $('ol.ratings').append(html);
 		}
 	});

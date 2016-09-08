@@ -8,21 +8,17 @@ $(document).ready(function(){
 		crossDomain: true,
 		data: {userid: userid},
 		success: function(response) {
-			$('#ein').val(response.ein);
-			$('#address').val(response.address);
-			$('#entity').val(response.entity);
+			$('.cnameblk').text(response.companyname);
+			$('.einblk').text(response.ein);
+			$('.addressblk').text(response.address);
+			$('.entityblk').text(response.entity);
 		}
 	});
-
 	$('#btn-edit').click(function(e){
 		e.preventDefault();
 		$("#myModal").modal('show');
-		$("#btn-close").hide();
 	});
-	$('#btn-close').click(function(e){
-		e.preventDefault();
-		$('.modal-backdrop').remove();
-	})
+
 	$('#btn-save').click(function(e){
 		e.preventDefault();
 		var userid = id,
@@ -35,13 +31,12 @@ $(document).ready(function(){
 			dataType: 'json',
 			crossDomain: true,
 			data: {userid: userid, ein: ein, address: address, entity: entity},
-			beforeSend: function(){ $(".overlay").show(); },
 			success: function(response) {
-				$(".overlay").hide();
 				$("#myModal").modal('show');
-				$("#btn-close").show();
+				$('.einblk').text(ein);
+				$('.addressblk').text(address);
+				$('.entityblk').text(entity);
 				$('.modalTitle').text('Success');
-				$("#myModal #tax_form, #btn-save").hide();
 				$(".modelText").html('Successfully Saved!');
 			}
 		});

@@ -15,11 +15,18 @@ $(document).ready(function(){
 			for(var x=1; x<=response.single.reviewrating; x++) {
 				ratings += '<img src="images/rating.png" alt="">';
 			}      
-            $('ol.rating').append(ratings);
+            $('span.rating').append(ratings);
             $('.count').text('('+response.single.reviewrating+')');
             $('.reviewDisplay').text(response.single.reviewtext);
+            $('#reviewrating').val(response.single.reviewrating);
+            $('#reviewtext').val(response.single.reviewtext);
 		}
 	});
+	$('#review-edit').click(function(e){
+		e.preventDefault();
+		$("#myModal").modal('show');
+		$('.btnclose').hide();
+	})
 	$("#review-save").click(function(){
 		var userid = id,
 			toid = $('#toid').val(),
@@ -37,18 +44,17 @@ $(document).ready(function(){
 				reviewtext :reviewtext
 			},
 			success: function(){
-			var ratings = '';
-			for(var x=1; x<=reviewrating; x++) {
-				ratings += '<img src="images/rating.png" alt="">';
+				var ratings = '';
+				for(var x=1; x<=reviewrating; x++) {
+					ratings += '<img src="images/rating.png" alt="">';
+				}
+	            $('ol.rating').html(ratings);
+	            $('.count').text('('+reviewrating+')');
+	            $('.reviewDisplay').text(reviewtext);
+	            $('.modalTitle').text('Success');
+	            $("#myModal").modal('show');
+				$(".modelText").html('Successfully Saved');
 			}
-
-            $('ol.rating').html(ratings);
-            $('.count').text('('+reviewrating+')');
-            $('.reviewDisplay').text(reviewtext);
-			$('#main-nav').append("<div class='error'>Sucessfully saved</div>");
-			$('.error').delay(3000).fadeOut(400);
-			}
-
 		});
 	});
 });

@@ -1,10 +1,10 @@
 <?php
 	require '../../connect.php';
 	require '../../header.php';
-
+	$userid = $_POST['userid'];
 	$sql = "SELECT * FROM tbl_users WHERE `role` = 'sales'";
-	$result = mysqli_query($conn, $sql);
-	$user_data = mysqli_fetch_array($result);
+	$result = $conn->query($sql);
+    for ($set = array (); $row = $result->fetch_assoc(); $set[] = $row);
 	echo json_encode(array(
-			'sales' => $user_data
+			'sales' => $set
 		));
