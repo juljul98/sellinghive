@@ -27,7 +27,7 @@ $(document).ready(function(){
 				// for(var y=1; y<=data[x].reviewrating; y++) {
 				// 	ratings += '<img src="images/rating.png" alt="">';
 				// }
-				html += '<a href="#" data-key="'+ data[x].id +'">';
+				html += '<a href="#" data-key="'+ data[x].eid +'">';
 				html += '<li><p class="person"><span class="name">' + data[x].email + '</span>';
 				html += '<span>';
 				html += ratings;

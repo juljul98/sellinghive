@@ -9,6 +9,7 @@ $(document).ready(function(){
 		    email = textBlk[0],
 		    role = textBlk[1];
 		    id = textBlk[2];
+		    alert(session);
 		   if(role == 'Sales') {
 		   		$('.roleprofile').attr('href', 'sales_public_profile.html');
 		   } else {
