@@ -1,17 +1,26 @@
 $(document).ready(function(){
-	var session = readCookie('UserEmail'),
+	function load_ready() {
+		var session = readCookie('UserEmail'),
 	textBlk = session.split('/'),
 	id = textBlk[2];
 	$('#id').val(id);
 	$.ajax({
 		type: 'post',
-		url: 'php/settings/profile/public_profile_get.php',
+		url: 'http://sellinghive.korinteraktiv.com/php/settings/profile/public_profile_get.php',
 		dataType: 'json',
 		crossDomain: true,
 		data: {
 			id: id,
 		},
+		beforeSend: function(){ $(".overlay").show(); },
 		success: function(response){
+			$(".overlay").hide();
+			if(response.logo != '') {
+				$('.displayLogo').attr('src', response.logo);
+			}
+			if(response.photo != '') {
+				$('.displayPic').attr('src', response.photo);
+			}
 			$('#oldlogo').val(response.logo);
 			$('#oldpic').val(response.photo);
 			$('#id').val(response.userid);
@@ -33,6 +42,8 @@ $(document).ready(function(){
 			}
 		}
 	});
+	}
+	load_ready();
 
 	$('.btn-logo').click(function(){
 		$('#logo').click();
@@ -54,6 +65,7 @@ $(document).ready(function(){
 			$(".overlay").hide();
             $("#myModal").modal('show');
 			$(".modelText").html('Successfully Saved!');
+			load_ready();
         }
      });
 

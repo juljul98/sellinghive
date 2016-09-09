@@ -3,11 +3,13 @@ $(document).ready(function(){
 	var userid = id;
 	$.ajax({
 		type: 'post',
-		url: 'php/settings/bank/bank_get.php',
+		url: 'http://sellinghive.korinteraktiv.com/php/settings/bank/bank_get.php',
 		dataType: 'json',
 		crossDomain: true,
 		data: {userid: userid},
+		beforeSend: function(){ $(".overlay").show(); },
 		success: function(response) {
+			$(".overlay").hide();
 			$('#bankname').val(response.bankname);
 			$('#routingnumber').val(response.routingnumber);
 			$('#accountnumber').val(response.accountnumber);
@@ -26,7 +28,7 @@ $(document).ready(function(){
 			paypalpassword = $('#paypalpassword').val();
 		$.ajax({
 			type: 'post',
-			url: 'php/settings/bank/bank_save.php',
+			url: 'http://sellinghive.korinteraktiv.com/php/settings/bank/bank_save.php',
 			dataType: 'json',
 			crossDomain: true,
 			data: {
@@ -37,7 +39,9 @@ $(document).ready(function(){
 				paypalusername : paypalusername,
 				paypalpassword : paypalpassword
 			},
+			beforeSend: function(){ $(".overlay").show(); },
 			success: function(response) {
+				$(".overlay").hide();
 				$('#main-nav').append("<div class='error'>Successfully Save</div>");
 				$('.error').delay(3000).fadeOut(400);
 			}

@@ -4,11 +4,13 @@ $(document).ready(function(){
 	toid = $('#toid').val();
 	$.ajax({
 		type: 'post',
-		url: 'php/settings/review/review_individual_get.php',
+		url: 'http://sellinghive.korinteraktiv.com/php/settings/review/review_individual_get.php',
 		dataType: 'json',
 		crossDomain: true,
 		data: {toid :toid, userid: userid},
+		beforeSend: function(){ $(".overlay").show(); },
 		success: function(response){
+			$(".overlay").hide();
 			$('h2.person-name').text(response.single.email);
 			var ratings = '';
 
@@ -34,7 +36,7 @@ $(document).ready(function(){
 			reviewtext = $('#reviewtext').val();
 		$.ajax({
 			type: 'post',
-			url: 'php/settings/review/review_update.php',
+			url: 'http://sellinghive.korinteraktiv.com/php/settings/review/review_update.php',
 			dataType: 'json',
 			crossDomain: true,
 			data: {
@@ -48,7 +50,7 @@ $(document).ready(function(){
 				for(var x=1; x<=reviewrating; x++) {
 					ratings += '<img src="images/rating.png" alt="">';
 				}
-	            $('ol.rating').html(ratings);
+	            $('span.rating').html(ratings);
 	            $('.count').text('('+reviewrating+')');
 	            $('.reviewDisplay').text(reviewtext);
 	            $('.modalTitle').text('Success');

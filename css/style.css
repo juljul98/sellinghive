@@ -149,7 +149,7 @@ img {
 	height: 60px; }
 	#main-nav a {
 		display: table-cell;
-		width: 25%;
+		width: 20%;
 		height: 60px;
 		vertical-align: middle; }
 		#main-nav a:hover, #main-nav a:active {

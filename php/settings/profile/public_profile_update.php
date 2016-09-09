@@ -42,7 +42,8 @@ require '../../header.php';
         $file02name = file_name(20);
         $new_path =  $new_root .'/php/uploads/'. $file02name . "." . $file02_ext;
         move_uploaded_file($file02_tmp, $new_path);
-        $photo = $new_path;
+        $new_path1 = str_replace($new_root, '',$new_path);
+        $photo = $new_path1;
         $message1['success'] = 'Save Picture';
       }
       $file01_name = $_FILES['logo']['name'];
@@ -63,7 +64,8 @@ require '../../header.php';
         $file01name = file_name(20);
         $new_path =  $new_root .'/php/uploads/'. $file01name . "." . $file01_ext;
         move_uploaded_file($file01_tmp, $new_path);
-        $logo = $new_path;
+        $new_path2 = str_replace($new_root, '',$new_path);
+        $logo = $new_path2;
         $message2['success'] = 'Save Picture';
       }
 

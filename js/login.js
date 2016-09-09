@@ -6,7 +6,7 @@ $(document).ready(function() {
 		    password = $('#password').val();
 		$.ajax({
 			type: "POST",
-			url: "php/login.php", //
+			url: "http://sellinghive.korinteraktiv.com/php/login.php", //
 			dataType: "json",
 			crossDomain: true,
 			data : {email: email, password: password},

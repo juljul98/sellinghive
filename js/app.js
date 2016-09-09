@@ -228,6 +228,8 @@ html += '<div class="overlay">';
        html+= '</div>';
    html+= '</div>';
   $("body").append(html);
+  logout = '<a href="index.html" class="navigation logout-btn btn"><img src="images/logout.png" alt="">';
+  $('#main-nav').append(logout);
 
 });
 

@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
-		    $('#fromId').val(id);
+	$('#fromId').val(id);
 	autoCompleteEmail();
 	// codes to auto complete input for email address
 	function autoCompleteEmail() {
 		$.ajax({
 			type: 'GET',
 			url: 'http://sellinghive.korinteraktiv.com/php/message/auto_complete.php', 
-			// url: 'php/autocomplete.php',
+			// url: 'php/message/auto_complete.php',
 
 			dataType: "jsonp",
 			crossDomain:true, 
@@ -31,7 +31,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: 'GET',
 			url: 'http://sellinghive.korinteraktiv.com/php/message/message_to_id.php', 
-			//url: 'php/message_to_id.php',
+			// url: 'php/message/message_to_id.php',
 
 			dataType: "jsonp",
 			crossDomain:true, 
@@ -44,24 +44,48 @@ $(document).ready(function() {
 		});
 	});
 
+	$('#file-input').change(function() {
+		var filename = $('#file-input').val().split('\\'),
+			fileToDisplay = filename[filename.length - 1];
+			$(".fileName").text(fileToDisplay);
+	});
+
 	$("#message-form").submit(function(e) {
 		$.ajax({
-
-			url: 'http://sellinghive.korinteraktiv.com/php/message/send_message.php',  	// Url to which the request is send
+			url: 'http://sellinghive.korinteraktiv.com/php/message/send_message.php',  	
+			// url: 'php/message/send_message.php',  	
+			// Url to which the request is send
 			type: "POST",             		// Type of request to be send, called as method
-			data: new FormData(this), 		// Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			// data: {formData: new FormData(this), opt: processOpt} , 		
+			data: new FormData(this) , 		
 			contentType: false,       		// The content type used when sending data to the server.
 			cache: false,             		// To unable request pages to be cached
 			processData:false,        		// To send DOMDocument or non processed data file it is set to false
-			success: function(response) {
-				if(data.success == 1) {
-					$('#main-nav').append("<div class='error'>Success</div>");
-					$('.error').delay(3000).fadeOut(400);
-				}else {
-					$('#main-nav').append("<div class='error'>Error</div>");
-					$('.error').delay(3000).fadeOut(400);
+			beforeSend: function(){ $(".overlay").show(); },
+			success: function(data) {
+				$(".overlay").hide();
+				if(data.success == 1) { // message sent
+					$("#myModal").modal('show');
+				}else if(data.success == 2) { // message save to draft
+					$(".modelText").text('Message Save to draft');
+					$("#myModal").modal('show');
+
+				}else if(data.success == 3) { // error message invalid file type
+					$(".modelText").text('Opps! Invalid file type');
+					$("#myModal").modal('show');
+
+				}else if(data.success == 4) { // error message file is too big 
+					$(".modelText").text('The file that you are trying to upload is too large');
+					$("#myModal").modal('show');
+
+				}else if(data.success == 5) { // error message 'to' is empty
+					$(".modelText").text('Error! the email address you entered doesn\'t exist');
+					$("#myModal").modal('show');
+
 				}
-				// $("#message").html(data);
+
+				$("#message-form").find('.removeRecords').val('');
+				$(".fileName").text('');
 			}
 		});
 

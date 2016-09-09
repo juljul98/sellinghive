@@ -3,11 +3,13 @@ $(document).ready(function(){
 	var userid = id;
 	$.ajax({
 		type: 'post',
-		url: 'php/settings/tax/corporate_tax_get.php',
+		url: 'http://sellinghive.korinteraktiv.com/php/settings/tax/corporate_tax_get.php',
 		dataType: 'json',
 		crossDomain: true,
 		data: {userid: userid},
+		beforeSend: function(){ $(".overlay").show(); },
 		success: function(response) {
+			$(".overlay").hide();
 			$('.cnameblk').text(response.companyname);
 			$('.einblk').text(response.ein);
 			$('.addressblk').text(response.address);
@@ -27,7 +29,7 @@ $(document).ready(function(){
 			entity = $('#entity').val();
 		$.ajax({
 			type: 'post',
-			url: 'php/settings/tax/corporate_tax_update.php',
+			url: 'http://sellinghive.korinteraktiv.com/php/settings/tax/corporate_tax_update.php',
 			dataType: 'json',
 			crossDomain: true,
 			data: {userid: userid, ein: ein, address: address, entity: entity},

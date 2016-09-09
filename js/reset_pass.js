@@ -11,7 +11,7 @@ $(document).ready(function(){
 		    newpass = $('#newpass').val();
 		    $.ajax({
 		    	type: 'POST',
-		    	url: 'php/settings/reset_pass/reset_pass.php',
+		    	url: 'http://sellinghive.korinteraktiv.com/php/settings/reset_pass/reset_pass.php',
 		    	dataType: 'json',
 		    	crossDomain: true,
 		    	data: {email : email, oldpass : oldpass, confirm_oldpass: confirm_oldpass, newpass: newpass},

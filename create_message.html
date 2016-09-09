@@ -43,8 +43,8 @@
                     <div class="form-group mt15">
                         <span class="msg-label">To:</span>
                         <div class="input-group col-xs-12">
-                            <input type="hidden" name="hiddenToId" id="hiddenToId">
-                            <input type="text" class="form-control input01" tabindex="1" name="msg-to" id="msg-to" list="auto_email">
+                            <input type="hidden" name="hiddenToId" id="hiddenToId" class="removeRecords" autocomplete="off">
+                            <input type="text" class="form-control input01 removeRecords" tabindex="1" name="msg-to" id="msg-to" list="auto_email">
                             <datalist id="auto_email"></datalist>
                         </div>
                     </div>
@@ -52,39 +52,61 @@
                     <div class="form-group mt15">
                         <span class="msg-label">Subject:</span>
                         <div class="input-group col-xs-12">
-                            <input type="text" class="form-control input01" name="msg-subject" id="msg-subject" tabindex="1" placeholder="">
+                            <input type="text" class="form-control input01 removeRecords" name="msg-subject" id="msg-subject" tabindex="1" placeholder="">
                         </div>
                     </div>
 
                     <p class="body-label">Body:</p>
-                    <textarea class="form-control input01" name="message-body" id="message-body">
-                        
-                    </textarea>
+                    <textarea class="form-control input01 removeRecords" name="message-body" cols="70" rows="50" id="message-body"></textarea>
 
-                    <div class="file-upload mt10 tCenter">
+                    <div class="file-upload mt10">
                         <label for="file-input">
                             <i class="fa fa-paperclip" aria-hidden="true"></i>
                         </label>
-
-                        <input id="file-input" type="file" name="file"/>
+                        <input id="file-input" type="file" class="removeRecords" name="file"/> <span class="fileName"></span>
                     </div>
+                    <small class="fileNotes"><strong>NOTE:</strong> <i>jpg, png, pdf, docx, excel and txt</i> those format are only accepted.</small>
                     <div class="button-wrap tCenter mt20">
-                        <button type="submit" class="btn-draft">Save Draft</button>
-                        <button type="submit">Send</button>
+                     <!--    <button type="submit" class="btn-draft btnSaveMessage" >Save Draft</button> -->
+                        <input type="submit" name="save-draft" class="btnDraftMsg fL" value="Save Draft">
+                        <button type="submit" class="btnSaveMessage fR" name="send">Send</button>
                     </div>
                 </form>
             </div>
+            
+            <div id="myModal" class="modal fade" role="dialog"  >
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title modalTitle"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Alert</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p class="modelText">Message successfully saved</p>
+                  </div>
+
+                    <div class="modal-footer">
+                         <a href="#" class="okBtn" data-dismiss="modal">Ok</a>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+
+
         </main>
-                        <nav id="main-nav">
+        <nav id="main-nav">
             <a href="users.html" class="navigation users-btn btn"><img src="images/home_icn.png" alt=""></a>
             <a href="award.html" class="navigation award-btn btn"><img src="images/award_icn.png" alt=""></a>
             <a href="messaging.html" class="navigation messaging-btn btn"><img src="images/mail_icn.png" alt=""></a>
             <a href="setting.html" class="navigation setting-btn btn"><img src="images/setting_icn.png" alt=""></a>
         </nav>
     </div>
-    
+
     
     <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript">
@@ -92,7 +114,7 @@
     </script>
     <script type="text/javascript" src="js/navigation.js"></script>
     <script type="text/javascript" src="js/session.js"></script>
-    <script src="js/simple-toast.js"></script>
+    
     <script src="js/create_message.js"></script>
 </body>
 </html>

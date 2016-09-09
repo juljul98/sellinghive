@@ -7,7 +7,7 @@ $(document).ready(function(){
 		    password = $('#password').val();
 		$.ajax({
 			type: 'POST',
-			url: 'php/register.php', //
+			url: 'http://sellinghive.korinteraktiv.com/php/register.php', //
 			dataType: "json",
 			crossDomain:true, 
 			data : {name: name, email: email, password: password},
